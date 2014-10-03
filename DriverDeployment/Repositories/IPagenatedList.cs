@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DriverDeployment.Repositories
 {
-   public interface IPagenatedList<T> : IList<T>, IEnumerable<T>
+    interface IPagenatedList<T> : IList<T>, IEnumerable<T>
     {
         int PageCount { get; }
         int TotalItemCount { get; }

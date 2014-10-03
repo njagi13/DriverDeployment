@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DriverDeployment.Repositories
 {
-   public interface IBaseRepository<T> where T : class
+    interface IBaseRepository<T> where T : class
     {
-       IEnumerable<T> GetAll(bool includeDeactivated = false);
         Guid Save(T entity);
 
         void SetInactive(T entity);

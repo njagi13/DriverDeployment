@@ -14,7 +14,6 @@ namespace DriverDeployment.Model
         public DateTime DepatureDateTime { get; set; }
         public DateTime ArrivalDateTime { get; set; }
         public int ActivityCode { get; set; }
-        public DateTime DateLastUpdated { get; set; }
         
         //Relationship
         public virtual Route Route { get; set; }

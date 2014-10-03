@@ -15,7 +15,7 @@ namespace DriverDeployment.Model
         public int TotalDays { get; set; }
         public DateTime StartLeave { get; set; }
         public DateTime ResumeToWork { get; set; }
-        public DateTime DateLastUpdated { get; set; }
+
         
         //Relationship
         public virtual Driver Drivers { get; set; }
