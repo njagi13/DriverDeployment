@@ -28,17 +28,23 @@ namespace DriverDeployment.Migrations
             var andrew = new Driver
             {
                 FirstName = "Andrew ",
-                SecondName = "Peters"
+                SecondName = "Peters",
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             var peter = new Driver
             {
                 FirstName = "Peter ",
-                SecondName = "Njoroge"
+                SecondName = "Njoroge",
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             var kimani = new Driver
             {
                 FirstName = "Kimani ",
-                SecondName = "Ngunjiri"
+                SecondName = "Ngunjiri",
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             context.Drivers.Add(andrew);
             context.Drivers.Add(peter);
@@ -50,21 +56,24 @@ namespace DriverDeployment.Migrations
                 TotalDays = 20,
                 StartLeave = new DateTime(2013, 11, 30, 8, 00, 21),
                 ResumeToWork = new DateTime(2013, 12, 8, 8, 00, 21),
-                Drivers = andrew
+                Drivers = andrew,
+                DateLastUpdated = DateTime.Now
             };
             var leave2 = new Leave
             {
                 TotalDays = 10,
                 StartLeave = new DateTime(2013, 11, 30, 8, 00, 21),
                 ResumeToWork = new DateTime(2013, 12, 5, 8, 00, 21),
-                Drivers = peter
+                Drivers = peter,
+                DateLastUpdated = DateTime.Now
             };
             var leave3 = new Leave
             {
                 TotalDays = 10,
                 StartLeave = new DateTime(2013, 11, 25, 8, 00, 21),
                 ResumeToWork = new DateTime(2013, 11, 30, 8, 00, 21),
-                Drivers = kimani
+                Drivers = kimani,
+                DateLastUpdated = DateTime.Now
             };
             context.Leaves.AddOrUpdate(leave1);
             context.Leaves.AddOrUpdate(leave2);
@@ -73,17 +82,23 @@ namespace DriverDeployment.Migrations
             var bus1 = new Bus
             {
                 BusNumber = "KBC 200P",
-                Capacity = 65
+                Capacity = 65,
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             var bus2 = new Bus
             {
                 BusNumber = "KBC 201P",
-                Capacity = 63
+                Capacity = 63,
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             var bus3 = new Bus
             {
                 BusNumber = "KBC 202P",
-                Capacity = 65
+                Capacity = 65,
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             context.Busses.Add(bus1);
             context.Busses.Add(bus2);
@@ -93,34 +108,41 @@ namespace DriverDeployment.Migrations
             {
                 RouteCode = "0001",
                 RouteName = "Kampala",
-                Busses = bus1
+                Busses = bus1,
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             var route2 = new Route
             {
                 RouteCode = "0002",
                 RouteName = "Busia",
-                Busses = bus2
+                Busses = bus2,
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
 
             var route3 = new Route
             {
                 RouteCode = "0003",
                 RouteName = "Sirare",
-                Busses = bus3
+                Busses = bus3,
+                Status = 0,
+                DateLastUpdated = DateTime.Now
             };
             context.Routes.AddOrUpdate(route1);
             context.Routes.AddOrUpdate(route2);
             context.Routes.AddOrUpdate(route3);
 
-            //var driverTransaction1 = new DriverActivity
-            //{
-            //    ActivityCode = 0,
-            //    DepatureDateTime = new DateTime(2000, 01, 01, 9, 45, 36),
-            //    ArrivalDateTime = DateTime.Now,
-            //    Driver = andrew,
-            //    Route = route1
-            //};
-            //context.DriverActivities.AddOrUpdate(driverTransaction1);
+            var driverTransaction1 = new DriverActivity
+            {
+                ActivityCode = 0,
+                DepatureDateTime = new DateTime(2000, 01, 01, 9, 45, 36),
+                ArrivalDateTime = DateTime.Now,
+                Driver = andrew,
+                Route = route1,
+                DateLastUpdated = DateTime.Now
+            };
+            context.DriverActivities.AddOrUpdate(driverTransaction1);
         }
     }
 }

@@ -9,6 +9,8 @@ namespace DriverDeployment.Model
         public Guid Id { get; set; }
         public string RouteName { get; set; }
         public string RouteCode { get; set; }
+        public int Status { get; set; }
+        public DateTime DateLastUpdated { get; set; }
 
         public Route()
         {
